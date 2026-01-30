@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "peticiones-tp-utn-fabrizio-caricato",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
