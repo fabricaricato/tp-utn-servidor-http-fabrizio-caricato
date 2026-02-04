@@ -15,11 +15,11 @@ servidor.use(express.json())
 servidor.use(cors())
 
 // ENDPOINTS
-servidor.use("/api/auth", validateJWT, authRouter)
+servidor.use("/api/auth", authRouter)
 servidor.use("/api/tasks", validateJWT, taskRouter)
 
 // CONEXIÓN Y ESCUCHA DEL PUERTO
 servidor.listen(PORT, () => {
   connectDb()
-  console.log(`=== 👂 Escuchando en el puerto: ${PORT} 👂 ===`)
+  console.log(`=== 👂 Listening in the port: ${PORT} 👂 ===`)
 })

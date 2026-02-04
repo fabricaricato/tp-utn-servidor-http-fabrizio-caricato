@@ -32,7 +32,7 @@ const updateTask = async (req, res) => {
     const updatedTask = await Task.findByIdAndUpdate(id, updates, { new: true });
 
     if (!updatedTask) {
-        return res.status(404).json({ success: false, message: "Tarea no encontrada o no tienes permiso" });
+      return res.status(404).json({ success: false, message: "Task not found or you do not have permission" });
     }
 
     return res.status(200).json({ success: true, data: updatedTask });
@@ -47,7 +47,7 @@ const deleteTask = async (req, res) => {
     const deletedTask = await Task.findByIdAndDelete(id);
 
     if (!deletedTask) {
-        return res.status(404).json({ success: false, message: "Tarea no encontrada o no tienes permiso" });
+      return res.status(404).json({ success: false, message: "Task not found or you do not have permission" });
     }
 
     return res.status(200).json({ success: true, data: deletedTask });

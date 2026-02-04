@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const UserSchema = new mongoose.Schema({
   username: {
     type: String,
-    default: "Nuevo usuario",
+    default: "New user",
     trim: true // Según la IA, elimina espacios vacios
   },
   email: {

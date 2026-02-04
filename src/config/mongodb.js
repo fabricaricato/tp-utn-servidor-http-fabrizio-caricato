@@ -7,9 +7,9 @@ const URI_DB = process.env.URI_DB
 const connectDb = async () => {
   try {
     await connect(URI_DB)
-    console.log("=== 👌 SERVIDOR CONECTADO CORRECTAMENTE 👌 ===")
+    console.log("=== 👌 SERVER CONNECTED 👌 ===")
   } catch (error) {
-    console.log("=== No se pudo conectar con el servidor :c ===")
+    console.log("=== ❌ Unable to connect to the server ❌ ===")
   }
 }
 
