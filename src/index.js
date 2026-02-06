@@ -7,6 +7,8 @@ import { taskRouter } from "./router/taskRouter.js"
 import { validateJWT } from "./middleware/middleware.js"
 config()
 
+connectDb()
+
 const PORT = process.env.PORT
 
 // Configuración del servidor
@@ -33,8 +35,11 @@ server.get('/', (req, res) => {
 server.use("/api/auth", authRouter)
 server.use("/api/tasks", validateJWT, taskRouter)
 
-// Conexión y escucha del puerto
-server.listen(PORT, () => {
-  connectDb()
-  console.log(`=== 👂 Listening in the port: ${PORT} 👂 ===`)
-})
+// Conexión y escucha del puerto (evalua si existe la variable automática de vercel)
+if (!process.env.VERCEL) {
+  server.listen(PORT, () => {
+    console.log(`=== 👂 Servidor local corriendo en puerto: ${PORT} 👂 ===`)
+  })
+}
+
+export default server
