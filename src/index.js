@@ -27,6 +27,7 @@ server.get('/', (req, res) => {
       <li>POST /api/auth/login (Login / Get Token)</li>
       <li>GET /api/tasks (View tasks - Token Required)</li>
     </ul>
+    <h4>Please check the project's README.md file to get started!</h4>
     <p>Developed by Fabrizio Caricato</p>
   `);
 });
